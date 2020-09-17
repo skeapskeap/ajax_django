@@ -1,6 +1,11 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.views.generic import View
 
 
-def index(request):
-    return HttpResponse("Хай Ку")
+class AjaxView(View):
+    def get(self, request):
+        text = request.GET.get('button_text')
+        print()
+        print(text)
+        print()
+        return render(request, 'ajax_explore/index.html')
