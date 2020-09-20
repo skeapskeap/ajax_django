@@ -11,6 +11,29 @@
     </ul>
 {% endblock %}
 
+{% block form %}
+    <form action="" method="post">
+        <div class="form-group">
+            <p>
+                <label for="id_ip">IP address:</label>
+                <input type="text" name="ip" class="form-control" required id="id_ip">
+            </p>
+            
+            <p>
+                <label for="id_action">Action:</label>
+                <select name="action" class="form-control" id="id_action">
+                    <option value="check">Проверить статус</option>
+                    <option value="block">Заблокировать</option>
+                    <option value="unblock">Разблокировать</option>
+                    <option value="new_mac">Новый MAC</option>
+                    <option value="delete_ip">Удалить IP</option>
+                </select>
+            </p>
+
+            <button class="form-control" type="submit" value="execute" name="execute">Выполнить</button>
+          </div>
+    </form>
+{% endblock %}
 
 {% block right-column %}
     {% csrf_token %}

@@ -59,4 +59,8 @@ $(document).ready(function (){ //метод jQuery ready() начинает ра
         })
     });
 
+    $("#id_action").change(function() {
+        alert("something changed")
+    });
+
 });
