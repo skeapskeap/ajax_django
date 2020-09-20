@@ -1,5 +1,5 @@
 $(document).ready(function (){ //метод jQuery ready() начинает работать когда готов DOM, медиа-контент может загружаться позже
-
+    
     function getCookie(name) { //функция парсит document.cookie по аргументу (name='csrftoken') и возвращает значение токена
         var cookieValue = null;
 
@@ -59,8 +59,16 @@ $(document).ready(function (){ //метод jQuery ready() начинает ра
         })
     });
 
-    $("#id_action").change(function() {
-        alert("something changed")
+    $("#action_id").change(function() {             //выполняется если в поле action что-то поменялось
+        var action = $("#action_id").val();         //узнает, какое значение выбрано в action
+        if (action === "new_mac") {                 //если выбрано "поменять мак"
+            $("#input_mac").css('display', 'block');//делает свойство css "display"="block" для id=input_mac 
+        }
+
+        else {
+            $("#input_mac").css('display', 'none');//делает свойство css "display"="none" для id=input_mac 
+        }
+        
     });
 
 });
